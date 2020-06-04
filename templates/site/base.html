@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images-site/favicon.ico' %}">
+    <link href="{% static 'css-site/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'fonts-site/fontawesome/css/fontawesome-all.min.css' %}" type="text/css" rel="stylesheet">    
+    <link href="{% static 'css-site/ui.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css-site/responsive.css' %}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link href="{% static 'css-site/custom.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body class="relative" data-spy="scroll" data-target=".navbar-landing">
+    {% include "site/base/header.html"%}
+    {% block content %} {% endblock %}
+    {% include "site/base/scripts.html"%}
+    {% include "site/base/footer.html"%}
+</body>
+</html>

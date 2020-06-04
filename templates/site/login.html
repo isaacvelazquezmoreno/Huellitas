@@ -1,0 +1,72 @@
+{% extends "site/base.html" %}
+{% block title %}Ingreso usuario - Veterinaria Huellitas{% endblock %}
+{% load static %}
+{% block content %}
+
+<!-- ========================= SECCIÓN BREADCRUMB ========================= -->
+<section class="section-pagetop bg-secondary">
+    <div class="container clearfix">
+        <h2 class="title-page text-white">Inicio de sesión</h2>
+
+        <nav class="float-left">
+        <ol class="breadcrumb text-white">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Iniciar sesión</li>
+        </ol>  
+        </nav>
+    </div>
+</section>
+<!-- ========================= SECCIÓN BREADCRUMB FIN // ========================= -->
+
+<!-- ========================= SECCIÓN CONTENIDO ========================= -->
+<section class="section-content bg padding-y">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">					
+                <div class="card">
+                    <article class="card-body">
+                        <h4 class="card-title text-center mb-4 mt-1">Inicia sesión</h4>
+                        <hr>
+                        <p class="text-success text-center">&nbsp;</p>
+                        <form method="GET" action="">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                     </div>
+                                    <input name="email" class="form-control" placeholder="Correo electrónico" type="email" required>
+                                </div> 
+                            </div> 
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                     </div>
+                                    <input class="form-control" placeholder="******" type="password" required>
+                                </div> 
+                            </div> 
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Ingresar  </button>
+                            </div> 
+                            <p class="text-center">¿No tienes una cuenta? <a href="/registro/" >Regístrate</a></p>
+                        </form>
+                    </article>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div> 
+</section>
+<!-- ========================= SECCIÓN CONTENIDO FIN// ========================= -->
+
+<!-- ========================= SECCIÓN NOTA  ========================= -->
+<section class="section-name bg-white padding-y">
+    <div class="container">
+        <h4>Importante</h4>
+        <p>Para poder agendar y/o administrar tus citas deberás tener una cuenta registrada e iniciar sesión.</p>
+    </div><!-- container // -->
+</section>
+<!-- ========================= SECCIÓN NOTA FIN// ========================= -->
+
+{% endblock %}

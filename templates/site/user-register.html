@@ -1,0 +1,104 @@
+{% extends "site/base.html" %}
+{% block title %}Registro de usuario - Veterinaria Huellitas{% endblock %}
+{% load static %}
+{% block content %}
+
+<!-- ========================= SECCIÓN BREADCRUMB ========================= -->
+<section class="section-pagetop bg-secondary">
+    <div class="container clearfix">
+        <h2 class="title-page text-white">Crear una cuenta</h2>
+
+        <nav class="float-left">
+        <ol class="breadcrumb text-white">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Crear cuenta</li>
+        </ol>  
+        </nav>
+    </div>
+</section>
+<!-- ========================= SECCIÓN BREADCRUMB FIN // ========================= -->
+
+<!-- ========================= SECCIÓN CONTENIDO ========================= -->
+<section class="section-content bg padding-y">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">					
+                
+                <div class="card">
+                    <header class="card-header">
+                        <a href="/login/" class="float-right btn btn-outline-primary mt-1">Inicia sesión</a>
+                        <h4 class="card-title mt-2">Regístrate</h4>
+                    </header>
+                    <article class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>Nombre</label>
+                                  <input type="text" class="form-control" placeholder="José" required>
+                            </div> <!-- form-group end.// -->
+                            <div class="col form-group">
+                                <label>Apellidos</label>
+                                  <input type="text" class="form-control" placeholder="Hernández Reyes" required>
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row end.// -->
+                        <div class="form-group">
+                            <label>Correo electrónico</label>
+                            <input type="email" class="form-control" placeholder="example@example.com" required>
+                            <small class="form-text text-muted">No compartas tu correo con nadie más.</small>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group">
+                                <label class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="gender" value="option1" required>
+                              <span class="form-check-label"> Hombre </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="gender" value="option2" required>
+                              <span class="form-check-label"> Mujer</span>
+                            </label>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label>Ciudad o Municipio</label>
+                              <input type="text" class="form-control" placeholder="Miguel Hidalgo" required>
+                            </div> <!-- form-group end.// -->
+                            <div class="form-group col-md-6">
+                              <label>Estado</label>
+                              <select id="inputState" class="form-control" required>
+                                <option> Seleccionar estado...</option>
+                                  <option>CDMX</option>
+                                  <option>EDOMEX</option>
+                              </select>
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row.// -->
+                        <div class="form-group">
+                            <label>Contraseña</label>
+                            <input class="form-control" type="password" placeholder="*******" required>
+                        </div> <!-- form-group end.// -->  
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Registrar  </button>
+                        </div> <!-- form-group// -->      
+                        <small class="text-muted text-center">Al hacer clic en el botón 'Registrar', confirma que acepta nuestros Términos de uso.</small>                                          
+                    </form>
+                    </article> <!-- card-body end .// -->
+                    <div class="border-top card-body text-center">¿Tiene una cuenta? <a href="/login/">Inicie sesión</a></div>
+                </div> <!-- card.// -->
+
+
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div> 
+</section>
+<!-- ========================= SECCIÓN CONTENIDO FIN// ========================= -->
+
+<!-- ========================= SECCIÓN NOTA  ========================= -->
+<section class="section-name bg-white padding-y">
+    <div class="container">
+        <h4>Importante</h4>
+        <p>Para poder agendar y/o administrar tus citas deberás tener una cuenta registrada e iniciar sesión.</p>
+    </div><!-- container // -->
+</section>
+<!-- ========================= SECCIÓN NOTA FIN// ========================= -->
+
+{% endblock %}

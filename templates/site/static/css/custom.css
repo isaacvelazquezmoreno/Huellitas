@@ -1,0 +1,26 @@
+.bg-homeb
+{
+	background-image: url('/static/images-site/banners/bg_3.jpg');
+	background-size: cover;
+}
+.icon-wrap
+{
+	border-radius: 50px;
+}
+.section-pagetop
+{
+	margin-top: 70px;
+}
+.breadcrumb-item.active
+{
+	color: #bdbdbd;
+}
+.breadcrumb-item + .breadcrumb-item::before
+{
+	color: #fff;
+}
+.bg-secondary
+{
+	background-image: url('/static/images-site/banners/bg_1.jpg');
+	background-position-y: -160px; 
+}

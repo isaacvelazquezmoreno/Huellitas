@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página web con Django</title>
+</head>
+<body>
+    <h1>¡Hola mundo! en Django</h1>
+    <h2>Mi nombre es: {{name|upper}}</h2> {# Filtros #}
+    {% if colores %}
+        <ul>
+        {% for items in colores %}
+            <li>{{items}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay colores que mostrar</p>
+    {% endif %}
+    <p><strong>{{suma}}</strong></p>
+</body>
+</html>

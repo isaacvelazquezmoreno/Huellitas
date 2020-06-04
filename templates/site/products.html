@@ -1,0 +1,233 @@
+{% extends "site/base.html" %}
+{% block title %}Productos - Veterinaria Huellitas{% endblock %}
+{% load static %}
+{% block content %}
+
+<!-- ========================= SECCIÓN BREADCRUMB ========================= -->
+<section class="section-pagetop bg-secondary">
+    <div class="container clearfix">
+        <h2 class="title-page text-white">Catálogo de productos</h2>
+
+        <nav class="float-left">
+        <ol class="breadcrumb text-white">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Productos</li>
+        </ol>  
+        </nav>
+    </div>
+</section>
+<!-- ========================= SECCIÓN BREADCRUMB FIN // ========================= -->
+
+<!-- ========================= SECCIÓN CONTENIDO ========================= -->
+<section class="section-content bg padding-y">
+    <div class="container">
+
+        <div class="row">
+            <aside class="col-sm-3">
+
+                <div class="card card-filter">
+                    <article class="card-group-item">
+                        <header class="card-header">
+                            <a class="" aria-expanded="true" href="#" data-toggle="collapse" data-target="#collapse22">
+                                <i class="icon-action fa fa-chevron-down"></i>
+                                <h6 class="title">Por categoría</h6>
+                            </a>
+                        </header>
+                        <div class="filter-content collapse show" id="collapse22">
+                            <div class="card-body">
+                                <form class="pb-3">
+                                <div class="input-group">
+                                  <input class="form-control" placeholder="Buscar..." type="text">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                                  </div>
+                                </div>
+                                </form>
+
+                                <ul class="list-unstyled list-lg">
+                                    <li><a href="#">Alimento <span class="float-right badge badge-light round">142</span> </a></li>
+                                    <li><a href="#">Accesorios  <span class="float-right badge badge-light round">3</span>  </a></li>
+                                    <li><a href="#">Medicamento <span class="float-right badge badge-light round">32</span>  </a></li>
+                                    <li><a href="#">Vacunas <span class="float-right badge badge-light round">12</span>  </a></li>
+                                </ul>  
+                            </div> 
+                        </div> 
+                    </article> 	
+                    <article class="card-group-item">
+                        <header class="card-header">
+                            <a href="#" data-toggle="collapse" data-target="#collapse44">
+                                <i class="icon-action fa fa-chevron-down"></i>
+                                <h6 class="title">Por marca </h6>
+                            </a>
+                        </header>
+                        <div class="filter-content collapse show" id="collapse44">
+                            <div class="card-body">
+                            <form>
+                                <label class="form-check">
+                                  <input class="form-check-input" value="" type="checkbox">
+                                  <span class="form-check-label">
+                                      <span class="float-right badge badge-light round">5</span>
+                                    Pedigree
+                                  </span>
+                                </label>  
+                                <label class="form-check">
+                                  <input class="form-check-input" value="" type="checkbox">
+                                  <span class="form-check-label">
+                                      <span class="float-right badge badge-light round">13</span>
+                                    Whiskas
+                                  </span>
+                                </label> 
+                                <label class="form-check">
+                                  <input class="form-check-input" value="" type="checkbox">
+                                  <span class="form-check-label">
+                                      <span class="float-right badge badge-light round">12</span>
+                                    Bayer
+                                  </span>
+                                </label>  
+                                <label class="form-check">
+                                  <input class="form-check-input" value="" type="checkbox">
+                                  <span class="form-check-label">
+                                      <span class="float-right badge badge-light round">32</span>
+                                    Pet's happy
+                                  </span>
+                                </label>  
+                            </form>
+                            </div> 
+                        </div> 
+                    </article> 
+                </div> 
+            </aside> 
+            <main class="col-sm-9">
+
+
+                <article class="card card-product">
+                    <div class="card-body">
+                    <div class="row">
+                        <aside class="col-sm-3">
+                            <div class="img-wrap"><img src="{% static 'images-site/pets/02.jpg' %}"></div>
+                        </aside> 
+                        <article class="col-sm-6">
+                                <h4 class="title"> Accesorios para perros  </h4>
+                                <div class="rating-wrap  mb-2">
+                                    <ul class="rating-stars">
+                                        <li style="width:80%" class="stars-active"> 
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                        </li>
+                                    </ul>
+                                    <div class="label-rating">132 opiniones</div>
+                                    <div class="label-rating">154 pedidos </div>
+                                </div> 
+                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
+                                <dl class="dlist-align">
+                                  <dt>Color</dt>
+                                  <dd>Rojo y blanco</dd>
+                                </dl>  
+                                <dl class="dlist-align">
+                                  <dt>Material</dt>
+                                  <dd>Sintético, plástico</dd>
+                                </dl>  
+                                <dl class="dlist-align">
+                                  <dt>Origen</dt>
+                                  <dd>México</dd>
+                                </dl>  
+                            
+                        </article> 
+                        <aside class="col-sm-3 border-left">
+                            <div class="action-wrap">
+                                <div class="price-wrap h4">
+                                    <span class="price"> $56 </span>	
+                                    <del class="price-old"> $98</del>
+                                </div> 
+                                <p class="text-success">Disponible en tienda</p>
+                                <br>
+                                <p>
+                                    <!--a href="#" class="btn btn-primary"> Comprar </a-->
+                                    <a href="#" class="btn btn-warning"> Detalles  </a>
+                                </p>
+                                <!--a href="#"><i class="fa fa-car"></i> Añadir a la lista de deseos</a-->
+                            </div> 
+                        </aside> 
+                    </div> 
+                    </div> 
+                </article> 
+
+                <article class="card card-product">
+                    <div class="card-body">
+                    <div class="row">
+                        <aside class="col-sm-3">
+                            <div class="img-wrap"><img src="{% static 'images-site/pets/01.jpg' %}"></div>
+                        </aside> 
+                        <article class="col-sm-6">
+                                <h4 class="title"> Accesorios para perros  </h4>
+                                <div class="rating-wrap mb-2">
+                                    <ul class="rating-stars">
+                                        <li style="width:50%" class="stars-active"> 
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                            <i class="fa fa-star"></i> 
+                                        </li>
+                                    </ul>
+                                    <div class="label-rating">12 opiniones</div>
+                                    <div class="label-rating">154 pedidos </div>
+                                </div> 
+                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
+                                <dl class="dlist-align">
+                                  <dt>Color</dt>
+                                  <dd>Negro y Blanco</dd>
+                                </dl>  
+                                <dl class="dlist-align">
+                                  <dt>Material</dt>
+                                  <dd>Sintético, plástico</dd>
+                                </dl>  
+                                <dl class="dlist-align">
+                                  <dt>Origen</dt>
+                                  <dd>México</dd>
+                                </dl>  
+                        </article> 
+                        <aside class="col-sm-3 border-left">
+                            <div class="action-wrap">
+                                <div class="price-wrap h4">
+                                    <span class="price"> $245 </span>	
+                                    <del class="price-old"> $528</del>
+                                </div> 
+                                <p class="text-danger">No disponible</p>
+                                <br>
+                                <p>
+                                    <!--a href="#" class="btn btn-primary"> Comprar </a-->
+                                    <a href="#" class="btn btn-warning"> Detalles  </a>
+                                </p>
+                                <!--a href="#"><i class="fa fa-heart"></i> Añadir a la lista de deseos</a-->
+                            </div> 
+                        </aside> 
+                    </div> 
+                    </div> 
+                </article> 
+            </main> 
+        </div>
+    </div> 
+</section>
+<!-- ========================= SECCIÓN CONTENIDO FIN// ========================= -->
+
+<!-- ========================= SECCIÓN NOTA  ========================= -->
+<section class="section-name bg-white padding-y">
+    <div class="container">
+        <h4>Importante</h4>
+        <p>Recuerda que este es sólo un catálogo de productos en el que puedes conocer la disponibilidad y los detalles de cada uno de los productos con los que contamos; sin embargo, la venta de los mismos son en nuestra tienda veterinaria.</p>
+    </div><!-- container // -->
+</section>
+<!-- ========================= SECCIÓN NOTA FIN// ========================= -->
+
+
+{% endblock %}
