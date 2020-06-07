@@ -15,16 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Huellitas.views import index, products, login, user_register, dates, appointment, param_num
+from HuellitasApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('productos/', products),
-    path('login/', login),
-    path('registro/', user_register),
-    path('citas/', dates),
-    path('agendar/', appointment),
+    path('', views.index),
+    path('productos/', views.products),
+    path('login/', views.login),
+    path('registro/', views.user_register),
+    path('citas/', views.dates),
+    path('agendar/', views.appointment),
     # Ejemplo URL con dos parámetros numéricos
-    path('suma/<int:num1>/<int:num2>/', param_num),
+    path('suma/<int:num1>/<int:num2>/', views.param_num),
 ]

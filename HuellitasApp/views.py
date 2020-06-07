@@ -1,7 +1,7 @@
-from django.http import HttpResponse
-from django.template import Template, Context
-from django.template.loader import get_template
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from HuellitasApp import forms
+
+# Create your views here.
 
 def index(request):    
     return render(request, "site/home.html")
@@ -10,7 +10,8 @@ def products(request):
     return render(request, "site/products.html")
 
 def login(request):
-    return render(request, "site/login.html")
+    login_form = forms.FormLogin()
+    return render(request, "site/login.html", {'form': login_form})
 
 def user_register(request):
     return render(request, "site/user-register.html")
