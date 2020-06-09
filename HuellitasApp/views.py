@@ -11,7 +11,7 @@ def products(request):
 
 def login(request):
     login_form = forms.FormLogin()
-    return render(request, "site/login.html", {'form': login_form})
+    return render(request, "usuarios/login.html", {'form': login_form})
 
 def user_register(request):
     return render(request, "site/user-register.html")
