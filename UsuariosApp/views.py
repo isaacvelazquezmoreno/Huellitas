@@ -29,7 +29,6 @@ def logout_request(request):
 	logout(request)	
 	return  render(request, 'site/home.html')
 
-
 def login_request(request):
     if request.method == 'POST':
         form = AuthenticationForm(request=request, data=request.POST)

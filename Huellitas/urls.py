@@ -23,14 +23,14 @@ from UsuariosApp import views as vu
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
-    path('home/', include('django.contrib.auth.urls') , vu.home_user, name="home" ),
     path('productos/', views.products),
-    path('login/', vu.login_request),
     path('registro/', views.user_register),
     path('citas/', views.dates),
     path('agendar/', views.appointment),
     path('registrar/', vu.signup_view),
+    path('login/', vu.login_request),
     path('logout/', vu.logout_request, name="logout"),
+    path('home/', vu.home_user, name="home" ),
     # Ejemplo URL con dos parámetros numéricos
     path('suma/<int:num1>/<int:num2>/', views.param_num),
     
