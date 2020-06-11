@@ -7,15 +7,13 @@ from .forms import RegisterAppointment
 
 
 def appointment(request):
-    # User.objects.filter(groups__name='Staff')
-    # appointment = Cita.objects.filter(groups__name='Veterinario')
-    return render(request, "citas/appointment.html", ) 
+    appointments = Cita.objects.filter(id_clie=request.user)
+    return render(request, "citas/appointment.html", {"appointments": appointments}) 
     
 
 def add_appointment(request):
     if request.method == 'POST':
         form = RegisterAppointment(request.POST)
-        # form_appotiment = Cita('id_clie'=request.user, 'id_vete'=)
         if form.is_valid():
             vet = form.cleaned_data['vets']
             day = form.cleaned_data['day']
