@@ -16,9 +16,6 @@ def login(request):
 def user_register(request):
     return render(request, "site/user-register.html")
 
-def dates(request):
-    return render(request, "site/date.html")
-
 def appointment(request):
     return render(request, "site/appointment.html")
 
