@@ -2,7 +2,6 @@
 {% block title %}Página Principal - Veterinaria Huellitas{% endblock %}
 {% load static %}
 {% block content %}
-
 <!-- ========================= SECCIÓN BREADCRUMB ========================= -->
 <section class="section-pagetop bg-secondary">
     <div class="container clearfix">
@@ -59,53 +58,22 @@
                                     </td>
                                     <td class="text-right">
                                         {% if a.est_cita == 'En espera' or a.est_cita == 'Confirmada' %}
-                                            <a href="#" class="btn btn-outline-danger btn-round"> × Cancelar</a>
+                                            <button class="btn btn_update btn-outline-danger btn-round" data-appointment = {{ a.id }} data-action="Cancelada"> × Cancelar</button>
                                         {% elif a.est_cita == 'Cancelada' %}
-                                            <a href="#" class="btn btn-outline-danger disabled"> × Cancelada</a>
+                                            <button class="btn btn-outline-danger disabled"> × Cancelada</button>
                                         {% elif a.est_cita == 'Finalizada' %}
-                                             <a href="#" class="btn btn-outline-success disabled"> ✓ Finalizada</a>
+                                             <button class="btn btn-outline-success disabled"> ✓ Finalizada</button>
                                         {% endif %} 
                                     </td>
                                 </tr>
                             
                             {% endfor %}
                             
-                            <tr>
-                                <td>
-                                    <figure class="media">
-                                        <div class="img-wrap"><img src="{% static 'images-site/avatars/avatar3.jpg' %}" class="img-thumbnail img-sm"></div>
-                                        <figcaption class="media-body">
-                                            <h6 class="title text-truncate">Doctor García </h6>
-                                            <dl class="dlist-inline small">
-                                              <dt>Cédula: </dt>
-                                              <dd>0345678</dd>
-                                            </dl>
-                                            <dl class="dlist-inline small">
-                                              <dt>Grado: </dt>
-                                              <dd>Doctor</dd>
-                                            </dl>
-                                        </figcaption>
-                                    </figure> 
-                                </td>
-                                <td> 
-                                    <strong>15/06/2020</strong>
-                                </td>
-                                <td> 
-                                    <div class="price-wrap"> 
-                                        <var class="price">En Espera</var> 
-                                        <small class="text-muted">10/05/2020</small> 
-                                    </div> <!-- price-wrap .// -->
-                                </td>
-                                <td class="text-right"> 										
-                                    <a href="#" class="btn btn-outline-danger btn-round"> × Cancelar</a>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div> <!-- card.// -->
             </main> <!-- col.// -->
             <aside class="col-sm-3">
-                <p class="alert alert-success">Ninguna cita ha sido cancelada. </p>
                 <p class="text-right">
                     <a href="agendar/" class="btn btn-warning btn-round"> + Agendar cita</a>
                 </p>

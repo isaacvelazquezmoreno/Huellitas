@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
+
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
+
+from django.http import JsonResponse
+import json
+
 from .models import Cita 
 from .forms import RegisterAppointment
 # Create your views here.
@@ -24,3 +29,11 @@ def add_appointment(request):
         # vets = User.objects.filter(groups__name='Veterinario')
         form = RegisterAppointment()
     return render( request, "citas/appointment-register.html", {"form": form} )
+
+def update_appointment_client(request):
+    data = json.loads(request.body)
+    # appointment = Cita(id=, )
+    appointment = Cita.objects.get(pk=data['appoitmentId'])
+    appointment.est_cita=data['action']
+    appointment.save()
+    return JsonResponse('El estado de la cita ha sido actualizada', safe=False)

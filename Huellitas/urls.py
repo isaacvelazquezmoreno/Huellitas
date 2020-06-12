@@ -33,6 +33,7 @@ urlpatterns = [
     path('home/', vu.home_user, name="home"),
     path('citas/', vc.appointment),
     path('citas/agendar/', vc.add_appointment),
+    path('citas/update_state/', vc.update_appointment_client),
     # Ejemplo URL con dos parámetros numéricos
     path('suma/<int:num1>/<int:num2>/', views.param_num),
     

@@ -15,7 +15,11 @@
                         <h2>&nbsp;</h2>
                         <p class="lead">Mejora la vida de tu mascota, nuestro grupo de veterinarios con años de experiencia ayudarán a mantener la salud y bienestar de tu mascota. Puedes consultar nuestro cátalogo de productos o bien agendar una cita.</p>
                         <p class="text-right">
-                            <a href="/login/" class="btn btn-warning">Agendar cita</a>
+                            {% if user.is_authenticated %}
+                                <a href="/citas/" class="btn btn-warning">Agendar cita</a>
+                            {% else %}
+                                <a href="/login/" class="btn btn-warning">Agendar cita</a>
+                            {% endif %}
                             <a href="/productos/" class="btn btn-light">Ver productos</a>
                         </p>					
                     </header>  
@@ -27,38 +31,6 @@
     <!-- ========================= SECCIÓN PRINCIPAL FIN// ========================= -->
 
 
-    <!-- ========================= SECCIÓN ¿QUÉ OFRECEMOS? ========================= -->
-    <section id="features" class="section-features bg2 padding-y-lg">
-        <div class="container">
-            <div class="row">
-                <aside class="col-sm-4">
-                    <figure class="itembox text-center">
-                        <span class="icon-wrap icon-lg bg-primary white"><i class="fa fa-calendar"></i></span>
-                        <figcaption class="text-wrap">
-                            <h4 class="title">Proxima cita</h4>	
-                            <p></p>
-                        </figcaption>
-                    </figure> 
-                </aside> 
-            </div> 
-        </div>
-    </section>
-    <!-- ========================= SECCIÓN ¿QUÉ OFRECEMOS? FIN// ========================= -->
-
-   
-
-    <!-- ========================= SECCIÓN FINAL ========================= -->
-    <section id="more" class="bg section-content padding-y-lg">
-        <div class="container">
-            <header class="section-heading text-center">
-                <h2 class="title-section"> Encontraste lo que buscas</h2>
-                <p class="lead"> Visita nuestra página de todos nuestros productos </p>
-            </header>			
-        </div>
-        <p class="text-center">
-            <br><a href="/productos/" class="btn btn-primary">Ver productos</a>
-        </p>
-    </section>
-    <!-- ========================= SECCIÓN FINAL FIN// ========================= -->
+ 
 
 {% endblock %}
