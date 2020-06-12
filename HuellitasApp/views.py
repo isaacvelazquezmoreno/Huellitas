@@ -1,13 +1,14 @@
 from django.shortcuts import render, HttpResponse
 from HuellitasApp import forms
-
+from .models import Producto
 # Create your views here.
 
 def index(request):    
     return render(request, "site/home.html")
 
 def products(request):
-    return render(request, "site/products.html")
+    products = Producto.objects.all()
+    return render(request, "site/products.html", {"products": products})
 
 def login(request):
     login_form = forms.FormLogin()
