@@ -15,6 +15,7 @@ class Producto(models.Model):
     id_mat = models.CharField(max_length=50, choices=C_MATERIAL, verbose_name='Tipo de material')
     id_ori = models.CharField(max_length=20, choices=C_ORIGEN, verbose_name='Origen')
     id_mar = models.CharField(max_length=50, choices=C_MARCA, verbose_name='Marca')
+    descri = models.CharField(max_length=300, default='Aqui hay una descripcion' ,verbose_name='Descripcion')
     pre_uni = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Precio unitario')
     stock_pro = models.IntegerField(verbose_name='Productos en existencia')
     img_pro = models.CharField(max_length=200, verbose_name='URL de imagen de producto', blank=True, default='/statics/images-site/pets/02.jpg')
