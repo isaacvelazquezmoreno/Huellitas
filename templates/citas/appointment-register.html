@@ -1,0 +1,77 @@
+{% extends "site/base.html" %}
+{% block title %}Página Principal - Veterinaria Huellitas{% endblock %}
+{% load static %}
+{% block content %}
+
+<!-- ========================= SECCIÓN BREADCRUMB ========================= -->
+<section class="section-pagetop bg-secondary">
+    <div class="container clearfix">
+        <h2 class="title-page text-white">Mis Citas</h2>
+
+        <nav class="float-left">
+        <ol class="breadcrumb text-white">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Agendar</li>
+        </ol>  
+        </nav>
+    </div>
+</section>
+<!-- ========================= SECCIÓN BREADCRUMB FIN // ========================= -->
+
+<!-- ========================= SECCIÓN CONTENIDO ========================= -->
+<section class="section-content bg padding-y">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <main class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form}}
+                            {% comment %} <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                {{ form.date }}
+                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div> {% endcomment %}
+                            {% comment %} <div class="form-group">
+                                <label for="exampleInputEmail1">Veterinario</label>
+                                <select class="custom-select" name="vets">
+                                   
+                                </select>
+                                <small id="emailHelp" class="form-text text-muted">Escoge un veterinario </small>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="datetime-local" id="datetime-local-input" name="date-time">
+                            </div> {% endcomment %}
+                            <button type="submit" class="btn btn-primary">Agendar</button>
+                        </form>
+                    </div> <!-- card-body.// -->
+                </div> <!-- card.// -->
+            </main> <!-- col.// -->
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div> 
+</section>
+<!-- ========================= SECCIÓN CONTENIDO FIN// ========================= -->
+
+<!-- ========================= SECCIÓN NOTA  ========================= -->
+<section class="section-name bg-white padding-y">
+    <div class="container">
+        <h4>Importante</h4>
+        <p>Elige un veterinario</p>
+    </div><!-- container // -->
+</section>
+<script>
+  $(function () {
+    $("#datetimepicker1").datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+    });
+  });
+</script>
+<!-- ========================= SECCIÓN NOTA FIN// ========================= -->
+
+{% endblock %}

@@ -15,8 +15,14 @@
                         <h2>&nbsp;</h2>
                         <p class="lead">Mejora la vida de tu mascota, nuestro grupo de veterinarios con años de experiencia ayudarán a mantener la salud y bienestar de tu mascota. Puedes consultar nuestro cátalogo de productos o bien agendar una cita.</p>
                         <p class="text-right">
-                            <a href="/login/" class="btn btn-warning">Agendar cita</a>
+                            <p class="text-right">
+                            {% if user.is_authenticated %}
+                                <a href="/citas/" class="btn btn-warning">Agendar cita</a>
+                            {% else %}
+                                <a href="/login/" class="btn btn-warning">Agendar cita</a>
+                            {% endif %}
                             <a href="/productos/" class="btn btn-light">Ver productos</a>
+                        </p>
                         </p>					
                     </header>  
                 </div>

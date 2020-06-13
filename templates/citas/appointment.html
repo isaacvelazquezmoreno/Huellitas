@@ -1,0 +1,95 @@
+{% extends "site/base.html" %}
+{% block title %}Página Principal - Veterinaria Huellitas{% endblock %}
+{% load static %}
+{% block content %}
+<!-- ========================= SECCIÓN BREADCRUMB ========================= -->
+<section class="section-pagetop bg-secondary">
+    <div class="container clearfix">
+        <h2 class="title-page text-white">Mis Citas</h2>
+
+        <nav class="float-left">
+        <ol class="breadcrumb text-white">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Mis citas</li>
+        </ol>  
+        </nav>
+    </div>
+</section>
+<!-- ========================= SECCIÓN BREADCRUMB FIN // ========================= -->
+
+<!-- ========================= SECCIÓN CONTENIDO ========================= -->
+<section class="section-content bg padding-y">
+    <div class="container">
+        <div class="row">
+            <main class="col-sm-9">
+                <div class="card">
+                    <table class="table table-hover shopping-cart-wrap">
+                        <thead class="text-muted">
+                            <tr>
+                              <th scope="col">Veterinario (a)</th>
+                              <th scope="col">Fecha de la cita</th>
+                              <th scope="col">Estado</th>
+                              <th scope="col" class="text-right">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for a in appointments %}
+                                <tr>
+                                    <td>
+                                        <figure class="media">
+                                            <div class="img-wrap"><img src="{% static 'images-site/avatars/avatar2.jpg' %}" class="img-thumbnail img-sm"></div>
+                                            <figcaption class="media-body">
+                                                <h6 class="title text-truncate"> {{ a.id_vete }} </h6>
+                                                <dl class="dlist-inline small">
+                                                    <dt>Grado: </dt>
+                                                    <dd>Doctor</dd>
+                                                </dl>
+                                            </figcaption>
+                                        </figure> 
+                                    </td>
+                                    <td> 
+                                        <strong> {{ a.fec_cita }} </strong>
+                                    </td>
+                                    <td> 
+                                        <div class="price-wrap"> 
+                                            <var class="price">{{ a.est_cita }}</var> 
+                                            <small class="text-muted"> {{ a.fec_cita }} </small> 
+                                        </div> <!-- price-wrap .// -->
+                                    </td>
+                                    <td class="text-right">
+                                        {% if a.est_cita == 'En espera' or a.est_cita == 'Confirmada' %}
+                                            <button class="btn btn_update btn-outline-danger btn-round" data-appointment = {{ a.id }} data-action="Cancelada"> × Cancelar</button>
+                                        {% elif a.est_cita == 'Cancelada' %}
+                                            <button class="btn btn-outline-danger disabled"> × Cancelada</button>
+                                        {% elif a.est_cita == 'Finalizada' %}
+                                             <button class="btn btn-outline-success disabled"> ✓ Finalizada</button>
+                                        {% endif %} 
+                                    </td>
+                                </tr>
+                            
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div> <!-- card.// -->
+            </main> <!-- col.// -->
+            <aside class="col-sm-3">
+                <p class="text-right">
+                    <a href="agendar/" class="btn btn-warning btn-round"> + Agendar cita</a>
+                </p>
+            </aside> <!-- col.// -->
+        </div>
+    </div> 
+</section>
+<!-- ========================= SECCIÓN CONTENIDO FIN// ========================= -->
+
+<!-- ========================= SECCIÓN NOTA  ========================= -->
+<section class="section-name bg-white padding-y">
+    <div class="container">
+        <h4>Importante</h4>
+        <p>Para poder cancelar una cita, deberás hacerlo como máximo un día antes de la misma; después de este límite no estará disponible dicha opción. El/La veterinari@ será el/la únic@ que podrá cancelar una Cita sin previo aviso.</p>
+    </div><!-- container // -->
+</section>
+<!-- ========================= SECCIÓN NOTA FIN// ========================= -->
+
+{% endblock %}

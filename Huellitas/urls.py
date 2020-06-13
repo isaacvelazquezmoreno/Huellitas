@@ -15,16 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+from django.contrib.auth import views as auth_views
 from HuellitasApp import views
+from UsuariosApp import views as vu
+from Citas import views as vc
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.index, name="index"),
     path('productos/', views.products),
-    path('login/', views.login),
     path('registro/', views.user_register),
-    path('citas/', views.dates),
     path('agendar/', views.appointment),
+    path('registrar/', vu.signup_view),
+    path('login/', vu.login_request),
+    path('logout/', vu.logout_request, name="logout"),
+    path('home/', vu.home_user, name="home"),
+    path('citas/', vc.appointment),
+    path('citas/agendar/', vc.add_appointment),
+    path('citas/update_state/', vc.update_appointment_client),
     # Ejemplo URL con dos parámetros numéricos
     path('suma/<int:num1>/<int:num2>/', views.param_num),
+    
 ]

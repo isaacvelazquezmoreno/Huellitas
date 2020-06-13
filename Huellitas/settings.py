@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'HuellitasApp',
+    'UsuariosApp',
+    'Citas'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'propuesta_db',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'av8V89YM',
         'HOST': 'localhost',
         'PORT': ''
     }

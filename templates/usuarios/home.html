@@ -1,0 +1,36 @@
+{% extends "site/base.html" %}
+{% block title %}Página Principal - Veterinaria Huellitas{% endblock %}
+{% load static %}
+{% block content %}
+    
+    <!-- ========================= SECCIÓN PRINCIPAL ========================= -->
+	<section id="intro" class="section-intro bg-homeb pt-5">
+        <div class="container">
+            <div class="row d-flex" style="min-height:615px;">
+                <div class="col-sm-6"></div>
+                
+                <div class="col-sm-6 d-flex align-items-center">
+                    <header class="intro-wrap text-white">
+                        <h2 class="display-3 text-center"> <i class="fa fa-paw"></i> Bienvenido {{ request.user.username }} </h2>
+                        <h2>&nbsp;</h2>
+                        <p class="lead">Mejora la vida de tu mascota, nuestro grupo de veterinarios con años de experiencia ayudarán a mantener la salud y bienestar de tu mascota. Puedes consultar nuestro cátalogo de productos o bien agendar una cita.</p>
+                        <p class="text-right">
+                            {% if user.is_authenticated %}
+                                <a href="/citas/" class="btn btn-warning">Agendar cita</a>
+                            {% else %}
+                                <a href="/login/" class="btn btn-warning">Agendar cita</a>
+                            {% endif %}
+                            <a href="/productos/" class="btn btn-light">Ver productos</a>
+                        </p>					
+                    </header>  
+                </div>
+                            
+            </div> 
+        </div> 
+    </section>
+    <!-- ========================= SECCIÓN PRINCIPAL FIN// ========================= -->
+
+
+ 
+
+{% endblock %}
